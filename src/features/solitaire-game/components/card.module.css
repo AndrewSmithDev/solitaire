@@ -1,19 +1,20 @@
 .card,
 .cardBack {
-  width: 100%;
-  height: 8rem; /* h-32 */
+  width: 150px;
+  height: 200px; 
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 8px;
 }
 
 .card {
   background-color: white;
-  border: 1px solid #d1d5db; /* border-gray-300 */
+  border: 1px solid #d1d5db;
 }
 
 .cardBack {
-  background-color: #1e40af; /* bg-blue-900 */
-  border: 2px solid #1d4ed8; /* border-blue-700 */
+  background-color: #1e40af;
+  border: 2px solid #1d4ed8;
+  box-shadow: 0px -3px 0px rgba(0,0,0,0.2);
 }
 
 .tableauCard {
@@ -29,7 +30,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 0.5rem;
 }
 
 .cardBackInner {
@@ -44,16 +44,16 @@
   width: 100%;
   height: 100%;
   border-radius: 0.25rem;
-  border: 2px solid #3b82f6; /* border-blue-500 */
-  background-color: #1e40af; /* bg-blue-800 */
+  border: 2px solid #3b82f6; 
+  background-color: #1e40af; 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cardBackSymbols {
-  font-size: 1.5rem;
-  color: #93c5fd; /* text-blue-300 */
+  font-size: 2rem;
+  color: #93c5fd;
   font-weight: bold;
   transform: rotate(45deg);
 }
@@ -69,12 +69,12 @@
 }
 
 .cardValue {
-  font-size: 1.125rem;
+  font-size: 1.75rem;
   font-weight: bold;
 }
 
 .cardSuit {
-  font-size: 1.125rem;
+  font-size: 1.75rem;
 }
 
 .cardCenter {
@@ -83,10 +83,10 @@
 }
 
 .red {
-  color: #dc2626; /* text-red-600 */
+  color: #dc2626; 
 }
 
 .black {
-  color: #000000; /* text-black */
+  color: #000000;
 }
 

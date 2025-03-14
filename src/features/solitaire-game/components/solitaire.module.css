@@ -73,6 +73,7 @@
 
 .stockWasteContainer {
   grid-column: span 1;
+  width: 325px;
 }
 
 .stockWaste {

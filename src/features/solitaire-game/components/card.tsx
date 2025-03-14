@@ -2,6 +2,7 @@ import { useDrag } from 'react-dnd';
 import styles from './card.module.css';
 import type { Card as CardType } from '../deck/deck';
 import { useRef } from 'react';
+import clsx from 'clsx';
 
 type CardProps = {
   card: CardType;
@@ -31,11 +32,12 @@ export default function Card({
   const isRed = card.suit === '♥' || card.suit === '♦';
 
   if (!card.faceUp) {
-    const cardBackClasses = [styles.cardBack, isTableau && styles.tableauCard]
-      .filter(Boolean)
-      .join(' ');
+    const cardBackClasses = clsx({
+      [styles.cardBack]: true,
+      [styles.tableauCard]: isTableau,
+    });
 
-    const cardBackStyle = isTableau ? { top: `${index * 1.5}rem` } : {};
+    const cardBackStyle = isTableau ? { top: `${index * 2.5}rem` } : {};
 
     return (
       <div className={cardBackClasses} style={cardBackStyle}>
@@ -56,48 +58,33 @@ export default function Card({
     .filter(Boolean)
     .join(' ');
 
-  const cardStyle = isTableau ? { top: `${index * 1.5}rem` } : {};
+  const cardStyle = isTableau ? { top: `${index * 2.5}rem` } : {};
+
+  const cardValue =
+    card.value === 1
+      ? 'A'
+      : card.value === 11
+        ? 'J'
+        : card.value === 12
+          ? 'Q'
+          : card.value === 13
+            ? 'K'
+            : card.value;
+
+  const colorStyle = isRed ? styles.red : styles.black;
 
   return (
     <div ref={cardRef} className={cardClasses} style={cardStyle}>
       <div className={styles.cardInner}>
-        <div
-          className={`${styles.cardCorner} ${isRed ? styles.red : styles.black}`}
-        >
-          <div className={styles.cardValue}>
-            {card.value === 1
-              ? 'A'
-              : card.value === 11
-                ? 'J'
-                : card.value === 12
-                  ? 'Q'
-                  : card.value === 13
-                    ? 'K'
-                    : card.value}
-          </div>
+        <div className={clsx(styles.cardCorner, colorStyle)}>
+          <div className={styles.cardValue}>{cardValue}</div>
           <div className={styles.cardSuit}>{card.suit}</div>
         </div>
 
-        <div
-          className={`${styles.cardCenter} ${isRed ? styles.red : styles.black}`}
-        >
-          {card.suit}
-        </div>
+        <div className={clsx(styles.cardCenter, colorStyle)}>{card.suit}</div>
 
-        <div
-          className={`${styles.cardCorner} ${styles.rotated} ${isRed ? styles.red : styles.black}`}
-        >
-          <div className={styles.cardValue}>
-            {card.value === 1
-              ? 'A'
-              : card.value === 11
-                ? 'J'
-                : card.value === 12
-                  ? 'Q'
-                  : card.value === 13
-                    ? 'K'
-                    : card.value}
-          </div>
+        <div className={clsx(styles.cardCorner, styles.rotated, colorStyle)}>
+          <div className={styles.cardValue}>{cardValue}</div>
           <div className={styles.cardSuit}>{card.suit}</div>
         </div>
       </div>

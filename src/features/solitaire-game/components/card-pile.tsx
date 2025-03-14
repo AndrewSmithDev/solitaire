@@ -3,6 +3,7 @@ import Card from './card';
 import styles from './card-pile.module.css';
 import type { Card as CardType } from '../deck/deck';
 import { useRef } from 'react';
+import clsx from 'clsx';
 
 type CardPileProps = {
   id: string;
@@ -64,27 +65,20 @@ export default function CardPile({
 
     return (
       <div className={styles.emptyTableauPile}>
-        <span className={styles.emptyPileSymbol}>K</span>
+        <span className={styles.emptyPileSymbol} />
       </div>
     );
   };
 
-  const pileClasses = [
-    styles.pile,
-    isOver && canDrop && styles.validDrop,
-    isOver && !canDrop && styles.invalidDrop,
+  const pileClasses = clsx({
+    [styles.pile]: true,
+    [styles.validDrop]: isOver && canDrop,
+    [styles.invalidDrop]: isOver && !canDrop,
     className,
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  const pileStyle =
-    isTableau && cards.length > 0
-      ? { height: `${8 + (cards.length - 1) * 1.5}rem` }
-      : {};
+  });
 
   return (
-    <div ref={pileRef} className={pileClasses} style={pileStyle}>
+    <div ref={pileRef} className={pileClasses}>
       {cards.length === 0 ? (
         renderEmptyPile()
       ) : (
