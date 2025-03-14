@@ -1,0 +1,17 @@
+.button {
+  height: 100vh;
+  width: 100vw;
+  background-color: #282c34;
+  color: white;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #282c34;
+}
+
+.button:active {
+  background-color: #282c34;
+}
