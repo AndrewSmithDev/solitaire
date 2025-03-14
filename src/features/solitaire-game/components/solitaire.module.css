@@ -1,0 +1,110 @@
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #2f855a; /* green-800 equivalent */
+}
+
+
+.container {
+  width: 100%;
+  max-width: 72rem; /* 6xl */
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  color: white;
+}
+
+.stat {
+  font-size: 1rem;
+}
+
+.winOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.winModal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.winTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.winText {
+  margin-bottom: 1rem;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stockWasteContainer {
+  grid-column: span 1;
+}
+
+.stockWaste {
+  display: flex;
+  gap: 1rem;
+}
+
+.spacer {
+  grid-column: span 2;
+}
+
+.foundationsContainer {
+  grid-column: span 4;
+}
+
+.foundations {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.tableaus {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+}
+
+.pile {
+  height: 8rem; /* h-32 */
+}
+
+.tableauPile {
+  min-height: 8rem; /* min-h-32 */
+}
+

@@ -1,0 +1,92 @@
+.card,
+.cardBack {
+  width: 100%;
+  height: 8rem; /* h-32 */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #d1d5db; /* border-gray-300 */
+}
+
+.cardBack {
+  background-color: #1e40af; /* bg-blue-900 */
+  border: 2px solid #1d4ed8; /* border-blue-700 */
+}
+
+.tableauCard {
+  position: absolute;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.cardBackInner {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.cardBackPattern {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  border: 2px solid #3b82f6; /* border-blue-500 */
+  background-color: #1e40af; /* bg-blue-800 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBackSymbols {
+  font-size: 1.5rem;
+  color: #93c5fd; /* text-blue-300 */
+  font-weight: bold;
+  transform: rotate(45deg);
+}
+
+.cardCorner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.cardValue {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.cardSuit {
+  font-size: 1.125rem;
+}
+
+.cardCenter {
+  font-size: 2.25rem;
+  align-self: center;
+}
+
+.red {
+  color: #dc2626; /* text-red-600 */
+}
+
+.black {
+  color: #000000; /* text-black */
+}
+
